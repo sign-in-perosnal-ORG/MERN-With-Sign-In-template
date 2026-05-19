@@ -48,8 +48,8 @@ COPY Backend/ ./
 # Express server can optionally serve it as static files
 COPY --from=frontend-builder /app/Frontend/dist ./public
 
-# Inform Docker (and users) that this container listens on port 3000
-EXPOSE 3000
+# Inform Docker (and users) that this container listens on port 5000 (matches config.js default)
+EXPOSE 5000
 
 # Start the Express server — this is the process that runs when the container starts
 CMD ["node", "src/server.js"]
